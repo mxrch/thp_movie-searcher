@@ -1,29 +1,24 @@
-# The Hacking Project - Movie Searcher
+# README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## :mag: The content
-In these exercises, I had to make an application that **asks for the name of a movie**, then returns the first 20 results containing :
-* The name of the film,
-* The release date,
-* The director,
-* and an image if there is one
+Things you may want to cover:
 
+* Ruby version
 
-**The live version : http://mxrch-movie-searcher.herokuapp.com/**
+* System dependencies
 
-**After cloning the repository, make sure to do :**
-```sh
-$ cd thp_movie-searcher
-$ bundle install
-```
+* Configuration
 
-This will install all the dependencies needed for the exercises.
+* Database creation
 
-## :european_post_office: The Strasbourgeois Crew
-Done in team with @OwwllMan, @zOmegad, @Runefire32, @BrokenPirate and myself (@mxrch). :heart:
+* Database initialization
 
-<hr>
+* How to run the test suite
 
-***It's an exercise from the TheHackingProject bootcamp.***
+* Services (job queues, cache servers, search engines, etc.)
 
-***> www.thehackingproject.org***
+* Deployment instructions
+
+* ...
