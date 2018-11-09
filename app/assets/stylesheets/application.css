@@ -1,15 +1,35 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+body {
+  background: #8E2DE2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-top: 15%;
+}
+
+h1, h2, h3 {
+  color: #FFFFFF;
+}
+
+.form-control {
+  border-radius: 1rem;
+  max-width: 50%;
+  margin: 2rem;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-success {
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+
+.fit-picture {
+  border-radius: 1rem;
+}
+
+.col-border {
+  border-right: ridge;
+}

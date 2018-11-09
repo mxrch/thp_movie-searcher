@@ -1,0 +1,75 @@
+
+<div align="center">
+  <h1>Recherchez un film ! <i class="fas fa-film"></i></h1>
+  <form method="post">
+    <div class="input-group">
+      <input type="text" name="search" class="form-control" placeholder="Titre du film" />
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button type="submit" class="btn btn-success"><i class="fas fa-search"></i> Lancer une recherche</button>
+  </form>
+
+  <% if @results %>
+    <% if @results[0] %>
+      <br>
+      <br>
+      <h2><%= @results.length.to_s + ((@results.length > 1) ? " résultats" : " résultat") + " pour " %><strong><em><%= @search %></em></strong></h2>
+      <br>
+      <% for movie in @results %>
+        <div class="card" style="max-width: 90%">
+          <h4 class="card-header"><%= movie[:title] %></h4>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-2 col-border">
+                <img width="171" height="256" class="fit-picture" src=<%= movie[:poster] %> alt=<%= "Poster du film " + movie[:title]%>/>
+              </div>
+              <div class="col-sm-2 col-border">
+                <h4>Date de sortie</h4>
+                <br>
+                <% if movie[:date] %>
+                  <%= movie[:date] %>
+                <% else %>
+                  <p>Aucune date de sortie trouvée.</p>
+                <% end %>
+              </div>
+              <div class="col-sm-2 col-border">
+                <h4><%= ((movie[:directors].length > 1) ? "Réalisateurs" : "Réalisateur") %></h4>
+                <br>
+                <% if movie[:directors][0] %>
+                  <% for director in movie[:directors] %>
+                    <% if movie[:directors].length > 1 %>
+                      <% unless director == movie[:directors].last %>
+                        <%= director + "," %>
+                      <% else %>
+                        <%= "et " + director + "." %>
+                      <% end %>
+                    <% else %>
+                      <%= director %>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <p>Aucun réalisateur trouvé.</p>
+                <% end %>
+              </div>
+              <div class="col-sm-6">
+                <h4>Synopsis</h4>
+                <br>
+                <% unless movie[:overview] == "" %>
+                  <%= movie[:overview] %>
+                <% else %>
+                  <p>Aucun synopsis trouvé.</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      <% end %>
+    <% else %>
+      <br>
+      <br>
+      <br>
+      <h3>Aucun résultat pour <strong><em><%= @search %></em></strong>.</h3>
+    <% end %>
+  <% end %>
+</div>
